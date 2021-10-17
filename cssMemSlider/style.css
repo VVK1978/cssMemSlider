@@ -1,0 +1,166 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+.carousel{
+  height: 90vh;
+}
+
+.carousel-container {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  overflow: hidden;
+  margin-top: 3%;
+}
+
+.carousel-slide {
+  display: flex;
+  width: 500%;
+  height: 100%;
+}
+
+.image,
+.image:nth-child(2),
+.image:nth-child(3),
+.image:nth-child(4),
+.image:nth-child(5) {
+  width: 100%;
+  height: 80%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("./1.jpg");
+  position: relative;
+}
+
+.image:nth-child(2) {
+  background-image: url("./2.jpg");
+}
+
+.image:nth-child(3) {
+  background-image: url("./3.jpg");
+}
+
+.image:nth-child(4) {
+  background-image: url("./4.jpg");
+}
+
+.image:nth-child(5) {
+  background-image: url("./5.webp");
+}
+
+.slider-animation {
+  transition: 0.5s ease-in-out;
+  animation: img infinite;
+}
+
+@keyframes img {
+  from,
+  to {
+    opacity: 0;
+  }
+
+  25%,
+  75% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.controls-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -11vh;
+}
+
+.controls {
+  width: 100%;
+  max-width: 15rem;
+  height: 3rem;
+  display: flex;
+  text-align: right;
+  justify-content: space-between;
+  z-index: 3;
+}
+
+.control {
+  width: 20%;
+  max-width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.control-item {
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  transition: 0.3s all;
+  background-color: cornflowerblue;
+}
+
+.active {
+  border: 2px solid cornflowerblue;
+  background-color: black;
+}
+
+.active:hover {
+  border: 2px solid white;
+  background-color: black;
+}
+
+.not-active:hover {
+  background-color: white;
+}
+
+.carousel-text {
+  width: 3500px;
+  display: flex;
+}
+
+.text {
+  font-size: 2rem;
+  position: relative;
+  width: 100%;
+  color: white;
+  text-align: left;
+  top: 110%;
+}
+
+@media (max-width: 768px) {
+  .controls-container {
+    justify-content: center;
+    margin-top: -27vh;
+  }
+
+  .text {
+    top: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .controls-container {
+    justify-content: center;
+    margin-top: -33vh;
+  }
+
+  .text {
+    top: 95%;
+    font-size: 1rem;
+  }
+}
